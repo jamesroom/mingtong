@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>jQuery UI Example Page</title>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+</head>
+<body>
+
+
+<div  id="bbb">
+    <form>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<a href="#" id="dialog-link">窗口演示</a>
+
+
+</body>
+
+
+<script type="text/javascript">
+
+    $( "#dialog-link" ).click(function( event ) {
+        $( "#bbb" ).dialog( "open" );
+
+        event.preventDefault();
+    });
+
+    $( "#bbb" ).dialog({
+        autoOpen: false,
+        width: 400,
+        buttons: [
+            {
+                text: "Ok",
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            },
+            {
+                text: "Cancel",
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        ]
+    });
+
+
+
+</script>
+</html>

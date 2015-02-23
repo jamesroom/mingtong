@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    标签：
+    div,span,ul,li,table;
+
+按效果分：块级标签，行内标签(display:block,inline,inline-block)
+
+<style>
+    .left{
+        width: 50%;
+
+        height: 30px;;
+        display: inline-block;
+    }
+    .right{
+        width: 50%;
+
+        height: 30px;
+        display: inline-block;
+
+    }
+    .left,.right{
+        float: left;
+    }
+    body{
+        margin: 0;
+    }
+    .main-float{
+        background-color: red;
+    }
+
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    .clearfix { display: inline-table; }
+    /* Hides from IE-mac \*/
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+    /* End hide from IE-mac */
+</style>
+<div class="main-float">
+    <div>
+
+        定义一个200px框 ，内容距边框 ，10px,边框 一像素。
+    </div>
+    <div class="left">
+        sdfgsdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        sdfg
+        sdf
+        g
+        dsfg
+        sdf
+        gfffffffffffffffffffffffffffffffffffffffffffffffff
+    </div>
+    <div class="right">right</div>
+
+</div>
+
+定义一个200px框 ，内容距边框 ，10px,边框 一像素。
+<style>
+    .box-test{
+        border: 1px solid  red;
+        padding: 10px;
+        width: 178px;
+        margin-top: 20px;
+        position: absolute;
+    }
+
+
+
+</style>
+    <div>
+<div class="box-test">
+    css盒模型
+
+    postion:  absolute,relative,fixed
+
+    absolute:往父级找，找到含有position:relative的标签，没有的放，就是body作为它的计算容器。
+    relative:
+    fixed：拿页面作为计算容器
+
+</div>
+        </div>
+
+<div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Example Page</title>
+
+<body>
+
+<a href="javascript:show()">显示</a>
+<style type="text/css">
+    .dialog{border:1px solid red;width:500px;height:400px;display: none}
+    .dialog h3{background: #ccc;margin:0px;padding:10px}
+    .dialog .content{padding:10px}
+
+</style>
+
+
+<div class="dialog" id="aaa">
+    <h3>title</h3>
+    <div class="content">
+
+        <form>
+            <table>
+                <tr>
+                    <td>姓名：</td>
+                    <td><input type="text"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="取消" id="cancel_button" onclick="hide()"/></td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+    document.getElementById("cancel_button").onclick = function(){
+        document.getElementById("aaa").style.display = "none";
+    }
+
+    function hide(){
+        document.getElementById("aaa").style.display = "none";
+    }
+
+    function show(){
+        document.getElementById("aaa").style.display = "block";
+    }
+
+    // Link to open the dialog
+
+
+</script>
+</html>
