@@ -21,13 +21,13 @@ if( !empty($_GET['id']) ){
     echo"<td>编号: ".$data['id']."<input id='edit_id' value='".$data['id']."' type='hidden'/></td></tr>";
     echo"<tr><td>意向:<input id='edit_want' type=\"text\" value=\"" .$data['want']."\"/></td></tr>";
     echo"<tr><td>名称: <input id='edit_name' type=\"text\" value=\"".$data['name']."\"/></td></tr>";
-    echo"<tr><td>联系方式:<input id =edit_phone' type=\"text\" value=\"".$data['phone']."\"/></td></tr>";
-    echo"<tr><td>回访时间:<input id =edit_v_time' type=\"text\" value=\"".$data['v_time']."\"/></td></tr>";
+    echo"<tr><td>联系方式:<input id ='edit_phone' type=\"text\" value=\"".$data['phone']."\"/></td></tr>";
+    echo"<tr><td>回访时间:<input id ='edit_v_time' type=\"text\" value=\"".$data['v_time']."\"/></td></tr>";
     //echo"<tr><td>回访人:<input id =edit_v_name' type=\"text\" value=\"".$data['v_name']."\"/></td></tr>";
-    echo"<tr><td>回访人:<select id =edit_v_name' type=\"text\" value=\"".$data['v_name']."\">$userInfo</select></td></tr>";
+    echo"<tr><td>回访人:<select id ='edit_v_name' type=\"text\" value=\"".$data['v_name']."\">$userInfo</select></td></tr>";
 
 
-    echo"<tr><td>内容:<textarea style='width: 410px; height: 200px' id =edit_comment' >".$data['comment']."</textarea></td></tr>";
+    echo"<tr><td>内容:<textarea style='width: 410px; height: 200px' id ='edit_comment'>".$data['comment']."</textarea></td></tr>";
     //echo"<tr><td>标记:<input id =edit_mark' type=\"text\" value=\"".$data['mark']."\"/></td></tr>";
 
 
