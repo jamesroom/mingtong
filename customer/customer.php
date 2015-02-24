@@ -20,6 +20,11 @@
 $con  = mysqli_connect("localhost","root", "", "mingtong");
 mysqli_query($con, "set names utf8");
 
+require_once("UserInfo.php");//列表框的用法1-5
+require_once("Config.php");//引用配置文件1-3
+$userList = UserInfo::getUserInfo($con);//列表框的用法2-5
+//$wantList = UserInfo::getWantInfo($con);
+
 if( !empty($_GET['del_id']) ){  //删除记录
     $del_id = $_GET['del_id'];
     //  var_dump($del_id);
@@ -44,13 +49,13 @@ while($data=mysqli_fetch_array($result))
     //print_r($data);
     echo'<tr>';
     echo"<td>".$data['id']."</td>";
-    echo"<td>".$data['want']."</td>";
+//    echo"<td>".$wantList[$data['want']]."</td>";
     echo"<td>".$data['name']."</td>";
     echo"<td>".$data['phone']."</td>";
     echo"<td>".$data['v_time']."</td>";
-    echo"<td>".$data['v_name']."</td>";
+    echo"<td>".$userList[$data['v_name']]."</td>";//列表框的用法3-5
     echo"<td>".$data['comment']."</td>";
-    echo"<td>".$data['mark']."</td>";
+    echo"<td>".Mark::$MarkInfo[$data['mark']]."</td>";//引用配置文件2-3
     echo"<td><a href='#' onclick=\"begin_edit("  . $data['id'] .")\">修改</a><a href='customer.php?del_id="  . $data['id'] ."'>删除</a></td>";
     echo "</tr>\n";
 }
