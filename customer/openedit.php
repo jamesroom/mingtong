@@ -12,6 +12,8 @@ if( !empty($_GET['id']) ){
     $result = mysqli_query($con, $edit_sql);
 
     $data=mysqli_fetch_array($result);
+
+    $userInfo = getUserInfo($con,$data["v_name"]);
     //var_dump( $data );
 
 
@@ -22,6 +24,9 @@ if( !empty($_GET['id']) ){
     echo"<tr><td>联系方式:<input id =edit_phone' type=\"text\" value=\"".$data['phone']."\"/></td></tr>";
     echo"<tr><td>回访时间:<input id =edit_v_time' type=\"text\" value=\"".$data['v_time']."\"/></td></tr>";
     //echo"<tr><td>回访人:<input id =edit_v_name' type=\"text\" value=\"".$data['v_name']."\"/></td></tr>";
+    echo"<tr><td>回访人:<select id =edit_v_name' type=\"text\" value=\"".$data['v_name']."\">$userInfo</select></td></tr>";
+
+
     echo"<tr><td>内容:<textarea style='width: 410px; height: 200px' id =edit_comment' >".$data['comment']."</textarea></td></tr>";
     //echo"<tr><td>标记:<input id =edit_mark' type=\"text\" value=\"".$data['mark']."\"/></td></tr>";
 
@@ -30,6 +35,18 @@ if( !empty($_GET['id']) ){
     echo "<script>$(\"input[name='mark'][value='".$data['mark']."']\").attr(\"checked\",true);  </script>";
 
     echo "</table>";
+}
+
+function getUserInfo($con,$selectedId){
+    $sql ="select id,nickname from  user";
+    $result = mysqli_query($con, $sql);
+    $html='';
+    while($data=mysqli_fetch_array($result))
+    {
+        $checked = $selectedId==$data["id"]?"selected":"";
+       $html.="<option $checked value='".$data["id"]."'>".$data["nickname"]."</option>";
+    }
+    return $html;
 }
 
 
