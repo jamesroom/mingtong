@@ -1,25 +1,9 @@
 
-<!Doctype html>
-<html xmlns=http://www.w3.org/1999/xhtml>
-<meta http-equiv=Content-Type content="text/html;charset=utf-8">
-
-<link href="../jquery/jquery-ui.css" rel="stylesheet">
-<script src="../jquery/jquery.js"></script>
-<script src="../jquery/jquery-ui.js"></script>
-
-<style type="text/css">
-
-    .aaa{ border:1px solid yellow  }
-    .aaa td{border-top:1px solid red}
-
-</style>
-
-<body>
 <?php
 
 $con  = mysqli_connect("localhost","root", "", "mingtong");
 mysqli_query($con, "set names utf8");
-set_include_path(dirname(__FILE__));
+
 require_once("UserInfo.php");//列表框的用法1-5
 require_once("Config.php");//引用配置文件1-3
 $userList = UserInfo::getUserInfo($con);//列表框的用法2-5
@@ -41,7 +25,7 @@ $result=mysqli_query($con, $query);
 // $data=mysqli_fetch_array($result,MYSQLI_ASSOC);
 // var_dump($data);
 
-echo'<table class="aaa" cellspacing="0" cellpadding="0" width=100% align=center><tr>';
+echo'<table class="aaa" cellspacing="0" cellpadding="0" width=90% align=center><tr>';
 echo'<td>编号</td><td>意向</td><td>名称</td><td>联系方式</td><td>回访时间</td><td>回访人</td><td>内容</td><td>标记</td><td>操作</td></tr>';
 while($data=mysqli_fetch_array($result))
 {
@@ -70,7 +54,6 @@ echo'</table>';
 
 ?>
 
-<a href='stu.htm'>返回</a>
 
 
 <div  id="dialog_container">
@@ -78,8 +61,6 @@ echo'</table>';
 </div>
 
 <!--<iframe src="http://www.baidu.com"/> -->
-
-</body>
 
 <script>
     function begin_edit(id){
@@ -161,5 +142,3 @@ echo'</table>';
 
     }
 </script>
-
-</html>

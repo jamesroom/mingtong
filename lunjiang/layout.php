@@ -1,8 +1,13 @@
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link href="../jquery/jquery-ui.css" rel="stylesheet">
+    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery-ui.js"></script>
+
 </head>
 <body>
 <style>
@@ -34,6 +39,36 @@
     .container{
         width: 1024px;
         margin: 0 auto;
+        position: relative;
+
+        height: 100%;
+
+
+    }
+
+    .container .main-c{
+        position: absolute;
+        padding-top: 31px;
+        height: 100%;
+        top: 0;
+        box-sizing: border-box;
+        padding-left: 100px;
+    }
+
+
+
+    html,body{
+        height: 100%;
+        margin: 0;
+    }
+    .main-c .main{
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .nav-left-container{
+        position: absolute;
+        left: 0;
+        top: 32px;
     }
 
 </style>
@@ -56,8 +91,7 @@
         </div>
         <div class="main">
             <?php
-              //  $id= isset($_GET["id"])?$_GET["id"]:1;
-              //      require($_GET)
+                require_once("../customer/customer.php");
             ?>
         </div>
     </div>

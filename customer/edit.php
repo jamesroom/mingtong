@@ -36,7 +36,7 @@ if( !empty($_GET['id']) ){
 
     echo "<tr><td>标记:<input name='mark' checked type=\"radio\" value='1'/>有效<input name='mark' type=\"radio\" value='2' />无效<input name='mark' type=\"radio\" value=\"3\"/>过期</td></tr>";
     echo "<script>$(\"input[name='mark'][value='".$data['mark']."']\").attr(\"checked\",true);  </script>";//radio的用法
-
+    echo "<a onclick=\"javascript:delData(this.href);return false;\" href='delete.php?del_id="  . $data['id'] ."'>删除</a>";
     echo "</table>";
 }
 
@@ -50,14 +50,23 @@ function getUserInfo($con,$selectedId){       //列表框的用法3/3
     return $html;
 }
 
+//function getWantInfo($con,$selectedId){
+//    $sql = "select id,r_b from r_b";
+//    $result = mysqli_query($con, $sql);
+//    $html='';
+//    while($data=mysqli_fetch_array($result))
+//    {
+//        $checked = $selectedId==$data["id"]?"selected":"";
+//        $html.="<option $checked value='".$data["id"]."'>".$data["r_b"]."</option>";
+//    }
+//    return $html;
+//}
 function getWantInfo($con,$selectedId){
-    $sql = "select id,r_b from r_b";
-    $result = mysqli_query($con, $sql);
+    $listData = WantInfo::getWantInfo($con);
     $html='';
-    while($data=mysqli_fetch_array($result))
-    {
-        $checked = $selectedId==$data["id"]?"selected":"";
-        $html.="<option $checked value='".$data["id"]."'>".$data["r_b"]."</option>";
+    foreach($listData as $k=>$v){
+        $checked = $selectedId==$k?"selected":"";
+        $html.="<option $checked value='".$k."'>".$v."</option>";
     }
     return $html;
 }

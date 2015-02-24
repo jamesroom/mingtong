@@ -14,4 +14,11 @@ class Mark {     //引用配置文件3-3
         3=>"过期"
     );
 
-} 
+}
+class R_b {  //客户管理意向
+    public  static $WantInfo = array(
+        1=>"租",
+        2=>"买",
+        3=>"租或买"
+    );
+}
