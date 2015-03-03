@@ -11,8 +11,6 @@ mysqli_query($con, "set names utf8");
 
 require_once("WantInfo.php");
 
-$wantInfo = getWantInfo($con,$data["want"]);
-var_dump($wantInfo);
 
 
 if( !empty($_GET['id']) ){
@@ -21,6 +19,8 @@ if( !empty($_GET['id']) ){
     $result = mysqli_query($con, $edit_sql);
 
     $data=mysqli_fetch_array($result);
+
+    $wantInfo = getWantInfo($con,$data["r_s"]);
 
     $data['comment']=$data['comment']."【".date('Y-m-d',time()).'】';
 
