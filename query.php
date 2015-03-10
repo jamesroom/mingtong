@@ -4,9 +4,7 @@
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
 
 <?php
-
 $name = !empty($_POST['name']) ? trim( $_POST['name'] ) : '';
-
 $replyer = !empty($_POST['replyer']) ?  trim( $_POST['replyer'] ) : '';
 
 ?>
